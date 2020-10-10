@@ -4,6 +4,7 @@
 #include "encrypt.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 //Asks for user input and encrypts the message by shifting the array value by the cipher value
 void encryptString (char array[LIMIT], int value){
@@ -12,15 +13,20 @@ void encryptString (char array[LIMIT], int value){
     fgets(array, LIMIT, stdin);
     array[strlen(array)-1] = 0;
     for(int i = 0; i <= strlen(array)-1; i++){
-        array[i] += value;
-        if (array[i] > 126 && value > 0){
-            array[i] -= 94;
+        unsigned char n = array[i];
+        n += value;
+        if (n >= 127){
+            n -= 94;
+
         }
-        else if (array[i] < 32 && value < 0){
-            array[i] += 94;
+        else if (n <= 31){
+            n += 94;
         }
+        array[i] = n;
     }
-    printf("The encrypted string is: %s\n\n", array);
+    printf("The encrypted string is: %s\n\nPress any key to return to the main menu", array);
+    scanf("%c");
+    system("cls");
 }
 
 void decryptString (char array[LIMIT], int value){
@@ -30,15 +36,19 @@ void decryptString (char array[LIMIT], int value){
     fgets(array, LIMIT, stdin);
     array[strlen(array)-1] = 0;
     for(int i = 0; i <= strlen(array)-1; i++){
-        array[i] += value;
-        if (array[i] > 126 && value > 0){
-            array[i] -= 94;
+        unsigned char n = array[i];
+        n += value;
+        if (n >= 127){
+            n -= 94;
         }
-        else if (array[i] < 32 && value < 0){
-            array[i] += 94;
+        else if (n <= 31){
+            n += 94;
         }
+        array[i] = n;
     }
-    printf("The encrypted string is: %s\n\n", array);
+    printf("The encrypted string is: %s\n\nPress any key to return to the main menu", array);
+    scanf("%c");
+    system("cls");
 }
 
 int cipherKey(){

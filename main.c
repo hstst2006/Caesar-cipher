@@ -28,6 +28,7 @@ void menu(char array[LIMIT]){
             case 2:
                 system("cls"); //Clears the system terminal (in windows)
                 decryptString(array, cipherKey());
+                system("cls");
                 break;
             case 3:
                 exit(0);
