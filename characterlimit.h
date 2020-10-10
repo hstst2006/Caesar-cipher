@@ -1,0 +1,10 @@
+//
+// Created by Håvard on 10.10.2020.
+//
+
+#ifndef CAESAR_CIPHER_CHARACTERLIMIT_H
+#define CAESAR_CIPHER_CHARACTERLIMIT_H
+
+#define LIMIT 256
+
+#endif //CAESAR_CIPHER_CHARACTERLIMIT_H
