@@ -1,5 +1,5 @@
-#Caesar cipher
-##How it works
+# Caesar cipher
+## How it works
 The Caesar cipher works by using a value (key) and shifting the values of
  a string up or down based on this key. 
  This program uses the values from the ASCII table to perform this action.
