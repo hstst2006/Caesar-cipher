@@ -20,7 +20,7 @@ void encryptString (char array[LIMIT], int value){
             array[i] += 94;
         }
     }
-    printf("The encrypted string is: %s\n", array);
+    printf("The encrypted string is: %s\n\n", array);
 }
 
 void decryptString (char array[LIMIT], int value){
@@ -38,7 +38,7 @@ void decryptString (char array[LIMIT], int value){
             array[i] += 94;
         }
     }
-    printf("The encrypted string is: %s\n", array);
+    printf("The encrypted string is: %s\n\n", array);
 }
 
 int cipherKey(){

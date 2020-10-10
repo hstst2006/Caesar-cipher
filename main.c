@@ -16,7 +16,7 @@ void menu(char array[LIMIT]){
     int userInput = 0;
     while (userInput != 3) {
         printf("Welcome to the... \n\n");
-        printf("CAESAR CIPHER!\n\n"); //FIXME: MAKE ME RED!
+        printf("CAESAR CIPHER!\n\n");
         printf("Would you like to... \n1. Encrypt a message?\n2. Decrypt a message?\n3. Quit?\n");
         scanf("%i", &userInput);
 
