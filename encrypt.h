@@ -10,5 +10,5 @@
 //void checkCharacterInBounds (char array[LIMIT], int value, int position);
 void encryptString (char array[LIMIT], int value);
 void decryptString (char array[LIMIT], int value);
-int cipherKey();
+int getCipherKey();
 #endif //CAESAR_CIPHER_ENCRYPT_H

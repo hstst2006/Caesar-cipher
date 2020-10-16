@@ -29,6 +29,8 @@ void encryptString (char array[LIMIT], int value){
     system("cls");
 }
 
+//void encryptFile()
+
 void decryptString (char array[LIMIT], int value){
     value = value * -1;
     printf("Enter message to decrypt: ");
@@ -51,7 +53,9 @@ void decryptString (char array[LIMIT], int value){
     system("cls");
 }
 
-int cipherKey(){
+//void decryptFile()
+
+int getCipherKey(){
     int value = 0;
     printf("Please enter a cipher key: ");
     scanf("%i", &value);
