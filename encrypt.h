@@ -7,8 +7,11 @@
 
 #include "characterlimit.h"
 
-//void checkCharacterInBounds (char array[LIMIT], int value, int position);
-void encryptString (char array[LIMIT], int value);
-void decryptString (char array[LIMIT], int value);
+void encryptString (char* array, int key, int charLimit);
+void decryptString (char* array, int key, int charLimit);
+void encryptFile(int key);
+void decryptFile(int key);
 int getCipherKey();
+int setCharLimit(int* charLimit);
+
 #endif //CAESAR_CIPHER_ENCRYPT_H

@@ -1,26 +1,41 @@
 # Caesar cipher
 ## How it works
-The Caesar cipher works by using a value (key) and shifting the values of
- a string up or down based on this key. 
- This program uses the values from the ASCII table to perform this action.
-## Navigating the user interface
-### To encrypt something enter 1.
-Enter a value (key) for the program to use while encrypting.
-Then enter the sentence you want to encrypt.
-Press any key when you are done looking at your message to return to the main menu.
-_**NB: This will clear the terminal (on windows, at least).**_
- 
-### To decrypt something enter 2.
-Enter a value (key) for the program to use while decrypting.
-Then enter the sentence you want to decrypt.
-Press any key when you are done reading the decrypted message to return to the main menu.
-_**NB: This will clear the terminal (on windows, at least)**_
- 
-### To quit the program enter 3.
-This option exits the program.
- 
-## Hopes and dreams:
-Change the hardcoded character limit (of 256), and use dynamic arrays instead.
+The Caesar cipher works by using a value (key), and a text input.
+It then shifs the value of each character up or down based on that key.
 
-Add option to read and write to file.
+## Navigating the user interface
+Input the numbers provided with the different menu options to select.
+
+### Selecting manual or file input
+Select between inputting a line in the terminal, or use a file as source.
+
+The program will use either "encryptme.txt" or "decryptme.txt" when using
+file as source. It will automatically generate a new file with the
+encrypted or decrypted content, intuitively called "encrypted" or "decrypted".
+
+_**NB: After selecting an input type the program must be restarted to change it.**_
+
+### Encrypting something
+You will be asked to enter a value (key) to shift each character by. Both
+positive and negative integer values are acceptable.
+
+For manual input: The program will then ask for a string to encrypt, and
+then display the encrypted string on screen when finished.
+
+For file input: The program will then automatically start reading
+"encryptme.txt" and generate a new file called "encrypted.txt" with the
+contents encrypted.
+
+### Decrypting something
+You will be asked to enter a value (key) to shift each character by. Both 
+positive and negative integer values are acceptable.
+
+For manual input: The program will then ask for a string to decrypt, and 
+then display the decrypted string on screen when finished.
+
+For file input: The program will then automatically start reading
+"decryptme.txt" and generate a new file called "encrypted.txt" with the
+contents encrypted.
+ 
+
 

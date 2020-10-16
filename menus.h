@@ -7,9 +7,8 @@
 
 #include "characterlimit.h"
 
-void menu(char array[LIMIT]);
-void menuSelectEncryptMethod(char array[LIMIT]);
-void menuSelectDecryptMethod(char array[LIMIT]);
-void setCharLimit(int* charLimit);
+void menuSelectInputMethod();
+void menuManualInput();
+void menuFileInput();
 
 #endif //CAESAR_CIPHER_MENUS_H

@@ -4,26 +4,43 @@
 
 #include "menus.h"
 #include "encrypt.h"
-#include "characterlimit.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu(char array[LIMIT]){
+void menuSelectInputMethod(){
+    int userOption = 0;
+    printf("\nWelcome to the... \n\n");
+    printf("CAESAR CIPHER!\n\n");
+    printf("Would you like to...\n1. Use manual input?\n2. Use file input?\n3. Quit?\n");
+    scanf("%i", &userOption);
+    switch(userOption){
+        case 1:
+            menuManualInput();
+            break;
+        case 2:
+            menuFileInput();
+            break;
+        case 3:
+            exit(1);
+    }
+}
+
+void menuManualInput(){
     int userInput = 0;
+    int charLimit = 0;
+    setCharLimit(&charLimit);
+    char* array = malloc(charLimit * sizeof(char));
     while (userInput != 3) {
-        printf("Welcome to the... \n\n");
+        printf("\nWelcome to the... \n\n");
         printf("CAESAR CIPHER!\n\n");
         printf("Would you like to... \n1. Encrypt a message?\n2. Decrypt a message?\n3. Quit?\n");
         scanf("%i", &userInput);
-
         switch (userInput) {
             case 1:
-                system("cls"); //Clears the system terminal (in windows)
-                encryptString(array, getCipherKey());
+                encryptString(array, getCipherKey(), charLimit);
                 break;
             case 2:
-                system("cls"); //Clears the system terminal (in windows)
-                decryptString(array, getCipherKey());
+                decryptString(array, getCipherKey(), charLimit);
                 break;
             case 3:
                 exit(0);
@@ -31,45 +48,23 @@ void menu(char array[LIMIT]){
     }
 }
 
-void menuSelectEncryptMethod(char array[LIMIT]){
+void menuFileInput(){
     int userInput = 0;
-    printf("Would you like to...\n1. Encrypt a line of text?\n2. Encrypt a file?\n3. Go back to the main menu?");
-    switch(userInput){
-        case 1:
-            system("cls"); //Clears the system terminal (in windows)
-            encryptString(array, getCipherKey());
-            break;
-        case 2:
-            system("cls"); //Clears the system terminal (in windows)
-            //
-            break;
-        case 3:
-            system("cls"); //Clears the system terminal (in windows)
-            menu(array);
-            break;
+    while (userInput != 3) {
+        printf("\nWelcome to the... \n\n");
+        printf("CAESAR CIPHER!\n\n");
+        printf("Enter the text you would like to encrypt or decrypt in either \"encryptme.txt\" or \"decryptme.txt\"\n");
+        printf("Would you like to... \n1. Encrypt a message?\n2. Decrypt a message?\n3. Quit?\n");
+        scanf("%i", &userInput);
+        switch (userInput) {
+            case 1:
+                encryptFile(getCipherKey());
+                break;
+            case 2:
+                decryptFile(getCipherKey());
+                break;
+            case 3:
+                exit(0);
+        }
     }
-}
-
-void menuSelectDecryptMethod(char array[LIMIT]){
-    int userInput = 0;
-    printf("Would you like to...\n1.Decrypt a line of text?\n2.Decrypt a file?\n3. Go back to the main menu?");
-    switch(userInput){
-        case 1:
-            system("cls"); //Clears the system terminal (in windows)
-            decryptString(array, getCipherKey());
-            break;
-        case 2:
-            system("cls"); //Clears the system terminal (in windows)
-            //
-            break;
-        case 3:
-            system("cls"); //Clears the system terminal (in windows)
-            menu(array);
-            break;
-    }
-}
-
-void setCharLimit(int* charLimit){
-    printf("Please enter a character limit: ");
-    scanf("%i", charLimit);
 }
