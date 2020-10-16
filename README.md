@@ -20,7 +20,7 @@ _**NB: This will clear the terminal (on windows, at least)**_
 This option exits the program.
  
 ## Hopes and dreams:
-Change the hardcoded character limit (of 256) to something more flexible
+Change the hardcoded character limit (of 256), and use dynamic arrays instead.
 
 Add option to read and write to file.
 
